@@ -48,6 +48,7 @@ task annotate_models: :environment do
   options[:hide_limit_column_types] = Annotate.fallback(ENV['hide_limit_column_types'], '')
   options[:hide_default_column_types] = Annotate.fallback(ENV['hide_default_column_types'], '')
   options[:with_comment] = Annotate.fallback(ENV['with_comment'], '')
+  options[:fixed_column_width] = ENV.fetch('fixed_column_width', nil)
 
   AnnotateModels.do_annotations(options)
 end
